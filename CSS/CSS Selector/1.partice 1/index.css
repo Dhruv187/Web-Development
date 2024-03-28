@@ -1,0 +1,17 @@
+div {
+  background-color: blue;
+  width: 20%;
+  height: 50px;
+  padding-top: 50px;
+  padding-bottom: 15px;
+  padding-left: 26px;
+  padding-right: 65px;
+  border: 25px solid chartreuse;
+}
+p {
+  background-color: aqua;
+  color: brown;
+  padding: 50px 90px 87px 54px;
+  overflow: scroll;
+  height: 50px;
+}

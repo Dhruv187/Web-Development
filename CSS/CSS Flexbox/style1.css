@@ -1,0 +1,11 @@
+.container {
+  border: 2px solid black;
+  height: 50vh;
+  width: 60vw;
+}
+.container > img {
+  height: 50vh;
+  width: 60vw;
+  object-fit: scale-down;
+  opacity: 0.3;
+}

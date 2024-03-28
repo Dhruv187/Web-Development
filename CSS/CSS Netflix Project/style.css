@@ -1,0 +1,714 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.background {
+  background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+  height: 95vh;
+  background-position: center;
+  position: relative;
+  border-bottom: 8px solid #323232;
+}
+.background .content {
+  height: 95vh;
+  width: 100vw;
+  background-color: black;
+  opacity: 0.68;
+  position: absolute;
+  top: 0;
+}
+.background .navbar {
+  display: flex;
+  width: 90vw;
+  justify-content: space-between;
+  margin: auto;
+}
+.option {
+  display: flex;
+}
+.navbar .logo img {
+  position: relative;
+  z-index: 100;
+  width: 90px;
+  margin-top: 25px;
+}
+.navbar .option .lang {
+  margin-top: 25px;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  font-weight: 400;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 75px;
+  height: 30px;
+  position: relative;
+  z-index: 100;
+}
+.navbar .option .lang select:active {
+  color: black;
+}
+.navbar .option .sign {
+  margin-top: 25px;
+  background-color: red;
+  color: white;
+  border: none;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  width: 75px;
+  height: 30px;
+  position: relative;
+  z-index: 100;
+  margin-left: 10px;
+  transition: all ease 1.3s;
+}
+.navbar .option .sign:hover {
+  background-color: rgb(143, 16, 16);
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 90%;
+  position: relative;
+  z-index: 100;
+}
+.intro h1 {
+  color: white;
+  margin-left: 10px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold 700;
+  font-size: 32px;
+  width: 312px;
+  height: 82px;
+}
+.intro p {
+  color: white;
+  margin-left: 10px;
+  font-size: 18px;
+  width: 312px;
+  height: 24px;
+  margin-top: 16px;
+  font-family: "Noto Sans", sans-serif;
+}
+.email {
+  margin-top: 20px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.email input {
+  padding: 20px 16px 4px;
+  width: 300px;
+  height: 45px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: grey;
+  border: 1px solid gray;
+}
+.email button {
+  background-color: red;
+  margin-top: 15px;
+  margin: auto;
+  border-radius: 5px;
+  border: none;
+  height: 50px;
+  width: 140px;
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition: all ease 0.8s;
+}
+.email button:hover {
+  background-color: rgb(143, 16, 16);
+}
+.email button:active {
+  background-color: red;
+}
+.section1 {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 75vh;
+  border-bottom: 8px solid #232323;
+}
+.section1 h1 {
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  font-size: 32px;
+  width: 312px;
+  height: 41px;
+  margin-top: 33px;
+}
+.section1 p {
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 16px;
+  width: 312px;
+  height: 70px;
+}
+.tv {
+  position: relative;
+}
+img {
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+.tv .vide1 {
+  position: absolute;
+  top: 57px;
+  left: 48px;
+}
+.section2 {
+  background-color: black;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-content: center;
+  height: 75vh;
+  align-items: center;
+  border-bottom: 8px solid #232323;
+}
+.section2 img {
+  width: 85%;
+}
+.section2 h1 {
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  width: 312px;
+  height: 41px;
+  margin-top: 33px;
+}
+.section2 p {
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 95px;
+  width: 312px;
+  height: 70px;
+}
+.section3 {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 75vh;
+  border-bottom: 8px solid #232323;
+}
+.section3 h1 {
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  font-size: 32px;
+  width: 312px;
+  height: 41px;
+  margin-top: 33px;
+}
+.section3 p {
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 16px;
+  width: 312px;
+  height: 70px;
+}
+.tv2 {
+  position: relative;
+}
+img {
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+.tv2 .vide2 {
+  position: absolute;
+  top: 20px;
+  left: 69px;
+}
+.section4 {
+  background-color: black;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-content: center;
+  height: 75vh;
+  align-items: center;
+  border-bottom: 8px solid #232323;
+}
+.section4 img {
+  width: 85%;
+}
+.section4 h1 {
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  width: 312px;
+  height: 41px;
+  margin-top: 33px;
+}
+.section4 p {
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 95px;
+  width: 312px;
+  height: 70px;
+}
+.section5 {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 110vh;
+  align-items: center;
+  border-bottom: 8px solid #232323;
+}
+.section5 .h1 h1 {
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.section5 .container1 p {
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  background-color: #2d2d2d;
+  margin-bottom: 9px;
+  padding: 20px;
+  width: 83vw;
+}
+.section5 .para p {
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+.email2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section5 .email2 input {
+  width: 264px;
+  height: 48px;
+  padding: 20px 16px 4px;
+  background-color: transparent;
+  color: grey;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+.section5 .email2 button {
+  margin-top: 14px;
+  width: 160px;
+  height: 48px;
+  justify-content: center;
+  background-color: red;
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  transition: all ease 0.8s;
+}
+.section5 .email2 button:hover {
+  background-color: rgb(143, 16, 16);
+}
+.email2 button:active {
+  background-color: red;
+}
+
+footer {
+  background-color: black;
+  height: 65vh;
+}
+footer p {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Noto Sans", sans-serif;
+  padding: 15px;
+  padding-top: 15px;
+  margin-left: 8vw;
+}
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 60vw;
+  padding: 30px;
+  text-align: start;
+  margin-left: 8vw;
+}
+.foot-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 20px;
+  align-content: center;
+  gap: 15px;
+}
+.foot-item a {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+}
+footer .lang2 {
+  width: 126px;
+  font-size: 10px;
+  height: 32px;
+  padding: 6px 32px;
+  color: white;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid white;
+  margin-left: 8vw;
+}
+.lang2:focus {
+  color: black;
+}
+footer .loct {
+  margin-left: 8vw;
+  margin-top: 50px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+}
+@media (min-width: 1290px) {
+  .background .content {
+    width: 99vw;
+  }
+  .background .navbar {
+    display: flex;
+    width: 78vw;
+    justify-content: space-between;
+    margin: auto;
+  }
+  .navbar .logo img {
+    width: 140px;
+    position: relative;
+    z-index: 100;
+    margin-top: 25px;
+  }
+  .navbar .option .lang {
+    margin-top: 25px;
+    padding: 6px 36px;
+    font-size: 10px;
+    height: 32px;
+    width: 127px;
+    color: white;
+    margin-right: 15px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid white;
+    position: relative;
+    z-index: 100;
+  }
+  .navbar .option .lang:active {
+    color: black;
+  }
+  .navbar .option .sign {
+    width: 77px;
+    height: 32px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9em;
+    position: relative;
+    z-index: 100;
+    border: none;
+    transition: all ease 1.3s;
+  }
+  .navbar .option .sign:hover {
+    background-color: rgb(143, 16, 16);
+  }
+  .head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 85%;
+    position: relative;
+    z-index: 100;
+  }
+  .intro h1 {
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bold 700;
+    font-size: 45px;
+    width: 871px;
+    height: 62px;
+  }
+  .intro p {
+    color: white;
+    margin-left: 10px;
+    font-size: 18px;
+    text-align: center;
+    width: 870px;
+    height: 30px;
+    margin-top: 16px;
+    font-family: "Noto Sans", sans-serif;
+  }
+  .email {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .email input {
+    padding: 20px 16px 4px;
+    width: 379px;
+    height: 56px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: grey;
+    border: 1px solid gray;
+  }
+  .email button {
+    background-color: red;
+    border-radius: 5px;
+    border: none;
+    height: 56px;
+    width: 210px;
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.6em;
+    font-weight: 800;
+    position: absolute;
+    left: 405px;
+    top: 0px;
+    transition: all ease 1.3s;
+  }
+  .email button:hover {
+    background-color: rgb(143, 16, 16);
+  }
+  .email button:active {
+    background-color: red;
+  }
+  .section1 {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+  }
+  .section1 h1 {
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+    text-align: start;
+    font-weight: 900;
+    font-size: 48px;
+    width: 725px;
+    height: 62px;
+    margin-top: 33px;
+  }
+  .section1 p {
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+    text-align: start;
+    margin-top: 16px;
+    font-size: 24px;
+    width: 725px;
+    height: 61px;
+  }
+  .tv {
+    position: relative;
+  }
+  .tv img {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+  }
+  .tv .vide1 {
+    position: absolute;
+    top: 101px;
+    left: 87px;
+  }
+  .section2 {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 78vh;
+  }
+  .section2 img {
+    width: 35%;
+  }
+  .section2 h1 {
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+    text-align: start;
+    font-weight: 900;
+    font-size: 48px;
+    width: 725px;
+    height: 62px;
+    margin-top: 33px;
+  }
+  .section2 p {
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+    margin-top: 80px;
+    font-size: 24px;
+    text-align: start;
+    width: 725px;
+    height: 61px;
+  }
+  .section3 {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .text3 {
+    display: flex;
+    flex-direction: column;
+  }
+  .section3 h1 {
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+    text-align: start;
+    font-weight: 900;
+    font-size: 48px;
+    width: 725px;
+    height: 62px;
+    margin-top: 33px;
+  }
+  .section3 p {
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+    margin-top: 16px;
+    font-size: 24px;
+    width: 725px;
+    height: 61px;
+    text-align: start;
+  }
+  .tv2 {
+    position: relative;
+  }
+  .tv2 img {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+  }
+  .tv2 .vide2 {
+    position: absolute;
+    width: 80%;
+    top: 37px;
+    left: 114px;
+  }
+  .section4 {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 78vh;
+  }
+  .section4 img {
+    width: 35%;
+  }
+  .section4 h1 {
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+    text-align: start;
+    font-weight: 900;
+    font-size: 48px;
+    width: 725px;
+    height: 62px;
+    margin-top: 33px;
+  }
+  .section4 p {
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+    margin-top: 27px;
+    font-size: 24px;
+    text-align: start;
+    width: 725px;
+    height: 61px;
+  }
+  .section5 {
+    height: 140vh;
+  }
+  .section5 .h1 h1 {
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 3em;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .section5 .container1 {
+    padding: 15px;
+  }
+  .section5 .container1 p {
+    padding: 30px;
+    font-size: 1.5em;
+    transition: all ease 0.8s;
+  }
+  .section5 .container1 p:hover {
+    background-color: rgb(97, 95, 95);
+  }
+  .email2 {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+  .email2 button {
+    position: absolute;
+    top: -14px;
+    left: 286px;
+    transition: all ease 0.8s;
+  }
+  .section5 .email2 button:hover {
+    background-color: rgb(143, 16, 16);
+  }
+  .section5 .email2 button:active {
+    background-color: red;
+  }
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 60vw;
+    padding: 30px;
+    text-align: start;
+    margin-left: 8vw;
+  }
+  .foot-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 20px;
+    align-content: center;
+    gap: 15px;
+  }
+}

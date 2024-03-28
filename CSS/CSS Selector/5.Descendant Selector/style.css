@@ -1,0 +1,35 @@
+#respices {
+  background-color: cadetblue;
+  padding: 15px;
+}
+#respices .respice {
+  padding: 10px;
+  border: 2px solid #204d25;
+}
+#respices .respice h2 {
+  text-align: center;
+  font-weight: bold;
+}
+#respices .respice p {
+  text-align: center;
+  font-style: italic;
+  color: aliceblue;
+}
+#reviews {
+  padding: 15px;
+  background-color: cornflowerblue;
+}
+#reviews .review {
+  padding: 10px;
+  border: 2px dashed #21114e;
+  margin-bottom: 5px;
+}
+#reviews .review h2 {
+  text-align: center;
+  font-weight: bold;
+}
+#reviews .review p {
+  text-align: center;
+  font-style: italic;
+  color: aliceblue;
+}

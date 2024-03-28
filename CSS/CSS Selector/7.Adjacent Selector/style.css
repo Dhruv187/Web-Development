@@ -1,0 +1,25 @@
+#news {
+  padding: 10px;
+  margin-left: 5px;
+}
+#news .article {
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+}
+#news .article h3 {
+  color: chocolate;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+#news .article .author + p {
+  color: red;
+  font-weight: bold;
+  font-style: italic;
+}
+#news > h2 {
+  padding: 5px;
+  background-color: cornflowerblue;
+  color: aliceblue;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-radius: 5px;
+  margin-left: 5px;
+}

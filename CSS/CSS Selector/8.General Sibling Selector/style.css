@@ -1,0 +1,40 @@
+body {
+  background-color: #f0f0f0;
+}
+#menu {
+  background-color: wheat;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 2px black;
+  max-width: 650px;
+  margin: auto;
+}
+.respice h2 {
+  color: chocolate;
+  border: 2px solid brown;
+  border-radius: 3px;
+  padding: 7px;
+}
+.respice .ingredient {
+  padding: 10px;
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  font-style: italic;
+}
+.respice .steps {
+  padding: 10px;
+  color: black;
+  background-color: beige;
+  border-radius: 5px;
+  font-style: italic;
+  margin-top: 9px;
+}
+.respice .tips {
+  padding: 10px;
+  color: black;
+  background-color: rgb(117, 117, 42);
+  border-radius: 5px;
+  font-style: italic;
+  margin-top: 9px;
+}

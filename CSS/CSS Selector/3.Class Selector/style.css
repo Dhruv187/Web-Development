@@ -1,0 +1,44 @@
+.main-title {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(18, 18, 130);
+  font-size: 35px;
+  font-weight: bold;
+}
+.intro {
+  text-align: center;
+  font-style: italic;
+  color: rgb(68, 68, 142);
+  font-size: 30px;
+}
+.featured-books {
+  padding: 13px;
+  border-radius: 15px;
+  margin: 12px;
+  color: rgb(240, 148, 10);
+  background-color: bisque;
+}
+.section-title {
+  margin-left: 20px;
+  color: rgb(213, 20, 20);
+  font-weight: bold;
+}
+.book-title {
+  margin-left: 20px;
+  font-style: italic;
+  font-weight: bolder;
+  color: rgb(74, 45, 0);
+}
+.contact {
+  padding: 13px;
+  border-radius: 15px;
+  margin: 12px;
+  color: rgb(137, 4, 121);
+  background-color: rgb(234, 180, 204);
+}
+.contact-info {
+  margin-left: 20px;
+  font-style: italic;
+  color: rgb(56, 12, 98);
+  font-weight: bolder;
+}

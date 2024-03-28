@@ -1,0 +1,25 @@
+#blog {
+  padding: 30px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+}
+#blog h1 {
+  font-family: "Times New Roman", Times, serif;
+  margin-left: 15px;
+}
+.link a {
+  font-size: 20px;
+  color: blue;
+  text-decoration: none;
+}
+.link ul {
+  list-style: none;
+}
+#blog .link a:hover {
+  color: red;
+  border-bottom: 2px solid red;
+}
+#blog .link a:active {
+  color: chartreuse;
+}

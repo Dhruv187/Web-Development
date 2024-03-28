@@ -1,0 +1,41 @@
+#title {
+  padding: 20px;
+  background-color: rgb(110, 110, 210);
+  text-align: center;
+}
+#name {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+#intro {
+  color: whitesmoke;
+  font-style: italic;
+}
+#projects {
+  padding: 20px;
+  background-color: rgb(253, 166, 37);
+  text-align: center;
+  margin: 5px;
+}
+#project-title {
+  color: rgb(243, 216, 182);
+  font-weight: bold;
+}
+#project1 {
+  color: bisque;
+  font-style: italic;
+}
+#project2 {
+  color: bisque;
+  font-style: italic;
+}
+#contact {
+  padding: 20px;
+  background-color: rgb(28, 255, 66);
+  text-align: center;
+  margin: 10px;
+}
+#email {
+  font-weight: bold;
+}

@@ -1,0 +1,22 @@
+h1 {
+  color: blue;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+p {
+  color: cornflowerblue;
+  text-align: center;
+}
+h2 {
+  color: darkblue;
+  text-align: center;
+  margin-top: 25px;
+}
+ul {
+  color: khaki;
+  text-align: center;
+  list-style: disc;
+}
+a {
+  font-size: 30px;
+}

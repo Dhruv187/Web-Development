@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+}
+.title {
+  background-color: rgb(25, 111, 140);
+  padding: 15px;
+  font-size: 2em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-decoration: underline;
+  text-align: center;
+  color: azure;
+  border: border-box;
+}
+.navbar {
+  background-color: rgb(85, 191, 226);
+  padding: 9px;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.navbar a:first-child {
+  margin-left: 15px;
+}
+.navbar a:hover {
+  color: black;
+}
+.about h2 {
+  text-transform: capitalize;
+  margin-left: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+}
+.about p {
+  margin-left: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.organization h2 {
+  text-transform: capitalize;
+  margin-left: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+}
+.organization p {
+  text-transform: capitalize;
+  margin-left: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: lighter;
+}
+.contact h2 {
+  text-transform: capitalize;
+  margin-left: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+}
+.contact p {
+  text-transform: capitalize;
+  margin-left: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+}
+.op {
+  padding: 10px;
+  background-color: rgb(25, 111, 140);
+  color: whitesmoke;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 3px;
+  border: none;
+  border: 2px solid balck;
+  position: relative;
+
+  left: 50%;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.op:hover {
+  background-color: blue;
+}
+.op:active {
+  background-color: black;
+}
+.foot {
+  padding: 10px;
+  background-color: lightgray;
+  text-align: center;
+}

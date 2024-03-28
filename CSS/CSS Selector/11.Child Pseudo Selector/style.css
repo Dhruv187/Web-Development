@@ -1,0 +1,28 @@
+body {
+  background-image: linear-gradient(lightgreen, lightblue);
+}
+#main {
+  padding: 30px;
+  background-color: azure;
+  border-radius: 5px;
+  margin: auto;
+  width: 50vw;
+  height: 50vh;
+}
+#main > h1::first-letter {
+  text-transform: capitalize;
+}
+.list h2 {
+  text-decoration: underline;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.list p {
+  font-style: italic;
+  margin-left: 15px;
+}
+li:last-child {
+  color: red;
+}
+li:nth-child(even) {
+  color: blueviolet;
+}
