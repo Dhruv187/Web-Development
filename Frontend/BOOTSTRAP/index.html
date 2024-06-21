@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      .iframe-pc {
+        width: 650px; /* Default width for PC */
+      }
+      .search {
+        width: 95%;
+        margin-left: 25px;
+      }
+
+      /* Media query for mobile devices */
+      @media (max-width: 768px) {
+        .iframe-pc {
+          width: 90%; /* Adjusted width for mobile */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><img src="./Designer (1).png" width="65px" class="rounded-circle"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active fs-5" aria-current="page" href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="#aboutus">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Cartoons
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#looney">Looney toons</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#dog"
+                    >Courage the Cowardly Dog</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#ala">Aladdin</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div id="carouselExampleCaptions" class="carousel slide h-100">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./39f8cc8acc30d50c46963dc9c2811afd9d7f3d58f75a9e9848b96e072fbc241d.jpg"
+            class="d-block h-50 w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Looney Tunes</h5>
+            <p>
+              he show sports a colorful and diverse group of characters with the
+              likes of Bugs Bunny, Daffy Duck, Tweety, Sylvester, and more
+              bringing delightful chaos to kids and adults around the world.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./courage-the-cowardly-dog-lihv38juf9uo2zex.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Courage the Cowardly Dog</h5>
+            <p>
+              The offbeat adventures of Courage, a cowardly dog who must
+              overcome his own fears to heroically defend his unknowing farmer
+              owners from all kinds of dangers, paranormal events and menaces
+              that appear around their land.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./1360473-aladdin-princess-jasmina-flying-magic-carpet.jpg"
+            class="d-block w-100 c-contain"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Aladdin</h5>
+            <p>
+              Aladdin is a lovable street urchin who meets Princess Jasmine, the
+              beautiful daughter of the sultan of Agrabah. While visiting her
+              exotic palace, Aladdin stumbles upon a magic oil lamp that
+              unleashes a powerful, wisecracking, larger-than-life genie.
+            </p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="container-fluid bg-dark text-light mt-1">
+      <p id="aboutus" class="display-6 text-center">About Us</p>
+      <div class="row justify-content-evenly">
+        <div class="col">
+          <img
+            class="rounded rounded mx-auto d-block mt-4 mb-4"
+            src="./Designer (1).png"
+            width="350px"
+          />
+        </div>
+        <div class="col-7">
+          <p class="fs-5 fw-bold mt-2 p-2">
+            Welcome to Toon World, your ultimate destination for all things
+            animation! 🎬 Whether you’re a nostalgic fan of timeless classics or
+            eager to explore cutting-edge anime and cartoon productions, we’ve
+            got you covered. Our platform brings you the latest news, in-depth
+            reviews, and insightful analysis of everything animated. From the
+            misadventures of Pinky and Brain to the treasure hunts of DuckTales,
+            we’re here to celebrate the magic of animation from the iconic 90s
+            era and beyond. So grab your popcorn, tune in, and let’s explore the
+            universe of animation together! 🌟<br />
+            Did you know that the iconic cartoon show “Animaniacs” was created
+            by Tom Ruegger and Steven Spielberg? The zany adventures of Yakko,
+            Wakko, and Dot entertained audiences with their clever humor, catchy
+            songs, and pop culture references. And who could forget the
+            unforgettable catchphrase: “Hello, Nurse!”? 🎵🌟
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="containerfluid bg-dark text-light mt-1">
+      <div class="display-6 text-center">Cartoons</div>
+      <div id="looney">
+        <h1 class="display-6 m-2 p-2 text-decoration-underline">
+          Looney tunes
+        </h1>
+        <div class="row">
+          <div class="col-md m-3 p-2 embed-responsive embed-responsive-16by9">
+            <iframe
+              class="iframe-pc"
+              width="650"
+              height="400"
+              src="https://www.youtube.com/embed/bhe7GJtwmQE"
+              title="Looney Tuesdays | How NOT To Capture The Roadrunner | WB Kids"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="col fw-bold m-2 p-3">
+            <p>
+              Looney Tunes and Merrie Melodies were initially produced by Leon
+              Schlesinger and animators Hugh Harman and Rudolf Ising from 1930
+              to 1933.[3] Schlesinger assumed full production from 1933 until he
+              sold his studio to Warner Bros. in 1944, after which it was
+              renamed Warner Bros. Cartoons.[3] The Looney Tunes title was
+              inspired by that of Walt Disney's Silly Symphonies.[3] The shorts
+              initially showcased musical compositions owned by Warner's music
+              publishing interests through the adventures of such characters as
+              Bosko and Buddy.[3] However, the shorts gained a higher profile
+              upon the debuts of directors Tex Avery, Friz Freleng, Chuck Jones,
+              and Bob Clampett and voice actor Mel Blanc later in the decade.[3]
+              Porky Pig and Daffy Duck became the featured Looney Tunes
+              characters, while Merrie Melodies featured one-shot cartoons and
+              minor recurring characters.[3] After Bugs Bunny became popular in
+              the Merrie Melodies shorts of the early 1940s, Looney Tunes moved
+              from black and white to color production, Merrie Melodies having
+              already been in color since 1934.[3] The two series gradually lost
+              their distinctions, and shorts were assigned to each series
+              arbitrarily.[3] From 1942 to 1964, Looney Tunes and Merrie
+              Melodies were the most popular animated shorts in movie
+              theaters.[4]
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="dog">
+      <div class="containerfluid bg-dark text-light mt-1">
+        <h1 class="display-6 p-2 text-decoration-underline">
+          Courage The Cowardly Dog
+        </h1>
+        <div class="row">
+          <div class="col fw-bold m-2 p-3">
+            <p>
+              Courage the Cowardly Dog follows Courage (Marty Grabstein), a kind
+              yet easily frightened dog. He was abandoned as a puppy after his
+              parents were sent into outer space by a crazed veterinarian.[3]
+              Soon after, he was found in an alleyway by Muriel Bagge (Thea
+              White), a caring woman who decided to take Courage in as her own;
+              the nature of this first meeting inspired her to give him his
+              name. In the present, Courage lives in an isolated farmhouse with
+              Muriel and her husband Eustace Bagge (Lionel Wilson in episodes
+              1–33, Arthur Anderson in episodes 34–52), a cranky and greedy man
+              who is jealous of Courage, refers to him as "stupid dog", and
+              periodically uses the "Ooga Booga" mask to frighten him. The
+              nearest town to the farmhouse is called Nowhere. Courage and his
+              owners frequently encounter monsters, aliens, zombies, and other
+              paranormal or supernatural creatures that are attracted to
+              Nowhere. Plots generally use conventions common to horror films.
+              Although most of the creatures the three face are hostile, others
+              suffer from distress, anger, and/or desperation, and sometimes are
+              friendly.The task of protecting Muriel and Eustace from such
+              dangers falls on Courage, who endeavors to thwart or reconcile
+              with the monster of the week and remedy or repair any damages
+              done. Although Courage is occasionally aided with that task, the
+              full extent of his efforts is usually performed unbeknownst to
+              Muriel and Eustace. Ironically, given his name, Courage may be
+              considered a genuine hero who often goes to great lengths to
+              protect his owners, and a genuine coward who still expresses much
+              of his distress with over-the-top, piercing shrieks.
+            </p>
+          </div>
+          <div class="col-md m-3 p-2 embed-responsive embed-responsive-16by9">
+            <iframe
+              class="iframe-pc"
+              width="650"
+              height="400"
+              src="https://www.youtube.com/embed/H40v3ISrHhQ"
+              title="Courage The Cowardly Dog - Mega Collection #1"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="ala">
+      <div class="containerfluid bg-dark text-light mt-1">
+        <h1 class="display-6 p-2 text-decoration-underline">Aladdin</h1>
+        <div class="row">
+          <div class="col-md m-3 p-2 embed-responsive embed-responsive-16by9">
+            <iframe
+              class="iframe-pc"
+              width="650"
+              height="400"
+              src="https://www.youtube.com/embed/MLavnoG1hKU"
+              title="Aladdin | Make Me A Prince | Disney Princess"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="col fw-bold m-3 p-2">
+            <p>
+              Jafar, a sorcerer and the royal vizier of the Middle Eastern city
+              of Agrabah, seeks a lamp hidden within the Cave of Wonders that
+              only "the diamond in the rough" can retrieve. Meanwhile, Princess
+              Jasmine is unsatisfied with her sheltered life in the palace. One
+              day, she escapes the palace and encounters a street urchin,
+              Aladdin, and his pet monkey, Abu. As a bond between Aladdin and
+              Jasmine develops, Jafar has the palace guards capture Aladdin,
+              during which Jasmine reveals herself. She confronts Jafar to
+              demand Aladdin's release, but he lies to her, stating that Aladdin
+              has already been beheaded. Disguised as an elderly beggar, Jafar
+              frees Aladdin and Abu and orders them to retrieve the lamp from
+              the cave. The guardian grants Aladdin entry, but warns him to
+              touch only the lamp. Aladdin finds both the lamp and a magic
+              carpet inside, but Abu grabs a large jewel and triggers a cave-in.
+              Aladdin gives the lamp to Jafar, who throws him and Abu into the
+              cave, although not before Abu steals it back. Later, Aladdin rubs
+              the lamp and meets the Genie, who lives inside. The Genie grants
+              Aladdin three wishes, although Aladdin tricks him to free them
+              from the cave without using a wish. On learning the Genie's desire
+              to be released from servitude, Aladdin promises to use his last
+              wish to free him. To woo Jasmine, Aladdin uses his first wish to
+              become a prince.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-dark text-light mt-1">
+      <h1 class="display-6 text-center p-3">FAQ</h1>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item p-3 bg-dark">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed bg-dark text-light border border-primary fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              What were some iconic 90s cartoons?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div
+              class="accordion-body bg-dark text-light border border-success"
+            >
+              he 1990s were a golden age for animated TV shows. Some beloved 90s
+              cartoons include: Tiny Toon Adventures: Follow the wacky
+              adventures of young Warner Brothers Looney Tunes characters.
+              Bobby’s World: Join Bobby Generic as he embarks on imaginative
+              adventures. TaleSpin: Set in the 1930s, this show features Baloo
+              the Bear as a Pacific Islands bush pilot.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item p-3 bg-dark">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed bg-dark text-light border border-primary fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              Why do millennials still love 90s cartoons?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div
+              class="accordion-body bg-dark text-light border border-success"
+            >
+              These shows pushed the boundaries of animation and storytelling,
+              leaving a lasting cultural impact. Whether it’s Dexter’s
+              Laboratory, The Powerpuff Girls, or Ren & Stimpy, these classics
+              resonate with audiences even today.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item p-3 bg-dark">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed bg-dark text-light border border-primary fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+              What made 90s cartoons unique?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div
+              class="accordion-body bg-dark text-light border border-success"
+            >
+              Animation Style: 90s cartoons often featured hand-drawn animation,
+              giving them a distinct look compared to today’s digital
+              animation.<br />
+              Memorable Theme Songs: From “DuckTales” to “Animaniacs,” these
+              shows had catchy tunes that still resonate with fans.<br />
+              Character Development: Iconic characters like Tommy Pickles from
+              “Rugrats” or Arnold from “Hey Arnold!” grew and faced relatable
+              challenges.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-dark text-light">
+      <h1 class="display-6 p-2">Your Suggestion for some Cartoons</h1>
+      <input
+        type="text"
+        placeholder="Drop Your Suggestion"
+        class="form-control search"
+        aria-label="Large"
+        aria-describedby="inputGroup-sizing-sm"
+      />
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary m-3 p-2" type="button">Submit</button>
+      </div>
+    </div>
+    <footer class="py-3 my-1 bg-dark text-light">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 bg-dark text-light">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-light">Features</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-light">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-light">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-light">About</a>
+        </li>
+      </ul>
+      <p class="text-center">© 2024 Company, Inc</p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
