@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #000000;
+}
+.main {
+  border: 2px solid rgb(255, 255, 255);
+  width: 40vw;
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px 0 rgb(255 255 255 / 38%);
+  background-color: #494e4e;
+}
+.main h2 {
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.main input {
+  background-color: white;
+  border: none;
+  width: 150px;
+  height: 35px;
+  font-size: 1em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.main input:focus {
+  border: none;
+  background-color: #494e4e;
+  color: white;
+}
+
+.main .sub {
+  background-color: white;
+  border: 1px solid black;
+  width: 80px;
+  height: 35px;
+  font-size: 1.2em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.main .sub:active {
+  background-color: #494e4e;
+  border: 1px solid white;
+  color: white;
+}
