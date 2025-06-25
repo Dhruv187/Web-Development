@@ -79,3 +79,7 @@ Event Queue works on FIFO principle that means first in first out that means fir
 5. If non-blocking → Processed immediately
 6. Result passed back to Event Loop
 7. Response sent to client
+
+### Note
+
+The diagram is used are created by Piyush Garg Dev
