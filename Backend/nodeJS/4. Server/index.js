@@ -2,12 +2,16 @@ let http = require("http");
 
 let fs = require("fs");
 
+let url = require("url");
+
 const myServer = http.createServer((req, res) => {
   const log = `${Date.now()}: ${req.url}: New request Recieved\n`;
+  const myUrl = url.parse(req.url, true);
   fs.appendFile("log.txt", log, (err, data) => {
-    switch (req.url) {
+    switch (myUrl.pathname) {
       case "/":
-        res.end("Home Page");
+        const username = myUrl.query.name;
+        res.end(`Hi ${username} Welcome to Page`);
         console.log("Visted Home");
         break;
       case "/about":
@@ -23,3 +27,5 @@ const myServer = http.createServer((req, res) => {
 });
 
 myServer.listen(8000, () => console.log("server started"));
+
+//! HTTPS METHODS there are various methods which are GET (Retrieve data from the server), POST (Send data to the server), PUT (Update/replace an existing resource completely with new data.),DELETE(Remove the specified resource from the server.), PATCH(Update part of an existing resource)
