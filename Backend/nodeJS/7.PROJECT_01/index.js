@@ -8,6 +8,17 @@ const fs = require("fs");
 app.use(express.urlencoded({ extended: false }));
 //! What is Body Parsing in Express? When a client (like Postman, a form, or frontend app) sends a request to your server — especially POST, PUT, or PATCH — the request body contains the data you want to use. But by default, Express does not know how to read or parse this body. That’s where body parsing comes in.
 
+//! Using middleware to create a log file to register entries
+app.use((req, res, next) => {
+  fs.appendFile(
+    "log.txt",
+    `\n${Date.now()}:${req.method}:${req.path}`,
+    (err, data) => {
+      next();
+    }
+  );
+});
+
 app.get("/user", (req, res) => {
   const html = `
     <ul>
@@ -18,6 +29,11 @@ app.get("/user", (req, res) => {
 });
 
 app.get("/api/user", (req, res) => {
+  //! HTTP headers are key-value pairs included in HTTP requests and responses, providing additional information about the communication between a client and a server
+
+  //! These are avaviable both at request and response side
+  //! Its a good partice to write X before writing key of custom header as it define it as a custom header
+  res.setHeader("X-Name", "CustomHeader");
   res.json(users);
 });
 
@@ -43,6 +59,7 @@ app
     const id = Number(req.params.id);
     const user = users.filter((user) => user.id !== id);
     //! push function is used to update the data of users
+    user.length = 0;
     users.push(user);
     fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
       res.json(user);
@@ -55,7 +72,7 @@ app.post("/api/user", (req, res) => {
   newUser.id = users.length + 1;
   users.push(newUser);
   fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
-    res.json(newUser);
+    res.status("201").json(newUser);
   });
 });
 
