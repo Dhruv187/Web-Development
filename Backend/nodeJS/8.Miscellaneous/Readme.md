@@ -94,3 +94,168 @@ HTTP status codes indicate the result of an HTTP request.
 | 503  | Service Unavailable   | The server is currently unable to handle the request.          |
 
 ---
+
+# Node.js Interview Essentials: Modules, Packages & Versioning
+
+This document covers core concepts in Node.js related to modules, package management, and versioning — frequently asked in technical interviews.
+
+---
+
+## 1. `require()` vs `import`
+
+| Feature         | `require()` (CommonJS)     | `import` (ES Modules)                         |
+| --------------- | -------------------------- | --------------------------------------------- |
+| Syntax          | `const fs = require('fs')` | `import fs from 'fs'`                         |
+| Module system   | CommonJS                   | ES Modules (ESM)                              |
+| Node.js support | Default in Node.js         | Supported in Node 14+ with `"type": "module"` |
+| Exports         | `module.exports`           | `export`, `export default`                    |
+| Dynamic loading | Yes                        | Yes (via `import()`)                          |
+
+> Use `require()` for legacy and most backend Node.js apps. Use `import` for modern, frontend-compatible or ES Module-based apps.
+
+---
+
+## 2. Creating and Using Custom Modules
+
+### Creating a module
+
+```js
+// math.js
+function add(a, b) {
+  return a + b;
+}
+module.exports = { add };
+```
+
+### Using the module
+
+```js
+// app.js
+const math = require("./math");
+console.log(math.add(2, 3)); // Output: 5
+```
+
+### For ES Modules:
+
+```js
+// math.js
+export function add(a, b) {
+  return a + b;
+}
+
+// app.js
+import { add } from "./math.js";
+console.log(add(2, 3));
+```
+
+---
+
+## 3. `package.json` vs `package-lock.json`
+
+### `package.json`
+
+- Manifest file for your Node.js project.
+- Contains:
+
+  - Project metadata (`name`, `version`)
+  - Scripts
+  - Dependencies
+
+Example:
+
+```json
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}
+```
+
+### `package-lock.json`
+
+- Auto-generated after `npm install`.
+- Records exact versions of installed packages and their dependencies.
+- Ensures consistent installs across environments.
+- Should be committed to version control.
+
+---
+
+## 4. Semantic Versioning (`^`, `~`, etc.)
+
+Format: `MAJOR.MINOR.PATCH` → `1.4.2`
+
+- `MAJOR` → Breaking changes
+- `MINOR` → New features
+- `PATCH` → Bug fixes
+
+### Prefixes:
+
+- `^1.4.2` → Allows `1.x.x` (but not `2.0.0`)
+- `~1.4.2` → Allows only patch updates: `1.4.x`
+- `1.4.2` → Fixed version
+
+Example:
+
+```json
+"dependencies": {
+  "express": "^4.18.0",
+  "lodash": "~4.17.21"
+}
+```
+
+---
+
+## 5. NPM vs Yarn
+
+| Feature      | NPM                      | Yarn                       |
+| ------------ | ------------------------ | -------------------------- |
+| Default tool | Comes with Node.js       | Requires installation      |
+| Lock file    | `package-lock.json`      | `yarn.lock`                |
+| Speed        | Slightly slower          | Faster due to caching      |
+| Commands     | `npm install`, `npm run` | `yarn install`, `yarn run` |
+
+> Both are good. Use what the project/team prefers. Yarn was faster before, but npm v7+ has improved performance.
+
+---
+
+## 6. Global vs Local Packages
+
+### Local Packages
+
+- Installed in project folder (`node_modules`)
+- Used **only** within the project
+
+```bash
+npm install express
+```
+
+### Global Packages
+
+- Installed system-wide
+- Available in terminal anywhere
+
+```bash
+npm install -g nodemon
+```
+
+### When to use:
+
+- **Local**: Project-specific libraries (`express`, `mongoose`)
+- **Global**: Tools and CLIs (`nodemon`, `eslint`, `typescript`)
+
+---
+
+## 📌 Interview Tip
+
+- Know how modules (`require`, `import`) work in Node.js.
+- Understand dependency management with `npm`, `package.json`, and lock files.
+- Be clear on semantic versioning with `^`, `~`, and fixed versions.
+- Practice creating and using custom modules.
+- Familiarize yourself with global vs local packages and when to use them.
+
+---
