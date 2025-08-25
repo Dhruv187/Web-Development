@@ -103,3 +103,47 @@ This operation is used to delete a multiple document with common value in collec
 -> Syntax:- db.<collectionName>.delete({skills: "ml"})
 
 **NOTE:- Read and Find OP are some what same and same goes for Create and Update OP**
+
+**Mis Operation**
+
+1. Sort Operation
+
+This operation is used to sort the document in collection.
+
+-> Syntax:- db.<collectionName>.find().sort({age:1}) (Increasing order)
+
+-> Syntax:- db.<collectionName>.find().sort({age:-1}) (Deacreasing order)
+
+2. Limit Operation
+
+This operation is used to limit access of the document in database.
+
+-> syntax:- db.<collectionName>.find().limit(1)
+
+# Aggregation Pipeline.
+
+-> An aggregation pipeline consists of one or more stages that process documents:
+
+-> Each stage performs an operation on the input documents. For example, a stage can filter documents, group documents, and calculate values.
+
+-> The documents that are output from a stage are passed to the next stage.
+
+-> An aggregation pipeline can return results for groups of documents. For example, return the total, average, maximum, and minimum values.
+
+**Collection**
+{ "name": "Joe", "skills": "ml", "qty": 5, "status": "selected" }
+{ "name": "Anna", "skills": "ml", "qty": 8, "status": "pending" }
+{ "name": "Bob", "skills": "nodeJS", "qty": 10, "status": "selected" }
+{ "name": "Clara", "skills": "ml", "qty": 3, "status": "selected" }
+
+**Syntax Aggregation Pipeline**
+
+db.Cars.aggregate([
+{ $match: { status: "selected" } }, // Step 1: filter documents
+{ $group: {
+_id: "$skills", // Step 2: group by "skills"
+totalQty: { $sum: "$qty" }, // Step 2: sum the "qty" for each group
+count: { $sum: 1 } // Step 2: count documents in each group
+} },
+{ $sort: { totalQty: -1 } } // Step 3: sort by totalQty descending
+]);
