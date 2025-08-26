@@ -1,149 +1,200 @@
-# What is MongoDb ?
+# What is MongoDB ?
 
--> MongoDb is a NoSQL Document based Database
--> It has strong support for Aggregation pipes (The aggregation pipeline in MongoDB is a way to process and analyze data inside the database. Think of it like an assembly line (pipeline) where documents pass through multiple stages, and at each stage, something happens (filtering, grouping, sorting, reshaping, etc.).)
--> Works on BSON format
--> Best for node application
+MongoDB is a **NoSQL Document-based Database**.
 
-# Example
+- Works on **BSON format**
+- Has strong support for **Aggregation pipelines**
+- Best for **Node.js applications**
 
+---
+
+# Example Document
+
+```json
 {
-"name": "John",
-"age":27,
-"skills":["python", "html","javascript"]
+  "name": "John",
+  "age": 27,
+  "skills": ["python", "html", "javascript"]
 }
+```
+
+---
 
 # Structure of MongoDB
 
-the structure of mongodb is as follow:-
-->Database: contains collection.
-->Collection: contain groups of documents
-and in complete form they form a DataBase.
+The structure of MongoDB is as follows:
+
+- **Database** → contains collections
+- **Collection** → contains groups of documents
+- **Document** → individual records stored in JSON-like format
+
+Together, they form a **Database system**.
+
+---
 
 # What is MongoDB Compass ?
 
--> MongoDB Compass is a GUI (Graphical User Interface) that help user to interact with Database easily both locally and on cloud.
+MongoDB Compass is a **GUI (Graphical User Interface)** that helps users interact with a database easily both locally and on the cloud.
+
+---
 
 # What is MongoDB Atlas ?
 
--> MongoDB Atlas is a fully managed, multi-cloud database-as-a-service that automates the deployment, scaling, and management of MongoDB databases. It simplifies database administration for developers, allowing them to focus on building applications instead of managing infrastructure by handling tasks like provisioning, backups, and performance optimization across AWS, Azure, and Google Cloud.
+MongoDB Atlas is a **fully managed, multi-cloud database-as-a-service** that automates deployment, scaling, and management of MongoDB databases.
 
-# Basic operations of mongoDB ?
+It simplifies database administration by handling tasks like provisioning, backups, and performance optimization across **AWS, Azure, and Google Cloud**.
 
--> the basic operations of mongoDB is also known as CRUD Operations:-
--> C:- Create
--> R:- Read
--> U:- Used
--> D:- Delete
+---
 
-**Show/Use Operations**
+# Basic Operations of MongoDB (CRUD)
 
-1. Show operation
-   This operation of used to view all the collections in DataBase
-   -> show dbs
+CRUD = **Create, Read, Update, Delete**
 
-2. Use operation
-   This operation is used to access a particular DataBase
-   -> use <DB Name>
+---
 
-**Create Operation**
+## Show / Use Operations
 
-1. Insert a Single Document
+1. **Show Databases**  
+   View all available databases.
 
-this operation is used to insert add document into collections of the database.
+   ```bash
+   show dbs
+   ```
 
-->Syntax:- db.<collectionName>.insertOne({name: "john", age: 35, skills: ["web", "dsa","ml"]})
+2. **Use Database**  
+   Switch to a specific database.
+   ```bash
+   use <DB Name>
+   ```
 
-2. Insert Many Document
+---
 
-This operation is used to insert add many document into collections of the database.
+## Create Operations
 
--> Syntax:= db.<collectionName>.insertMany([{name: "joe", age: 25, skills: ["css", "dsa","ml"]},{name: "White", age: 22, skills: ["js", "node","ml"]},{name: "Ben", age: 30, skills: ["react", "sql","DS"]}])
+1. **Insert a Single Document**  
+   Used to insert one document into a collection.
 
-**Read Operations**
+   ```js
+   db.<collectionName>.insertOne({name: "john", age: 35, skills: ["web", "dsa","ml"]})
+   ```
 
-1. Find Single a Document
+2. **Insert Multiple Documents**  
+   Used to insert many documents at once.
+   ```js
+   db.<collectionName>.insertMany([
+     {name: "joe", age: 25, skills: ["css", "dsa","ml"]},
+     {name: "White", age: 22, skills: ["js", "node","ml"]},
+     {name: "Ben", age: 30, skills: ["react", "sql","DS"]}
+   ])
+   ```
 
-This operation is used to find a particular specfic document in collection.
+---
 
--> Syntax:- db.<collectionName>.findOne({name: "joe"})
+## Read Operations
 
-2. Find Multiple Document
+1. **Find a Single Document**  
+   Fetches one specific document from a collection.
 
-This operation is used to find a multiple document with common value in collection.
+   ```js
+   db.<collectionName>.findOne({name: "joe"})
+   ```
 
--> Syntax:- db.<collectionName>.find({skills: "ml"})
+2. **Find Multiple Documents**  
+   Fetches all documents matching a condition.
+   ```js
+   db.<collectionName>.find({skills: "ml"})
+   ```
 
-**Update Operations**
+---
 
-1. Update Single a Document
+## Update Operations
 
-This operation is used to update a particular specfic document in collection.
+1. **Update a Single Document**  
+   Updates only the first matching document.
 
--> Syntax:- db.<collectionName>.updateOne({name: "joe"}, {$set: {skills: "nodeJS"}})
+   ```js
+   db.<collectionName>.updateOne({name: "joe"}, {$set: {skills: "nodeJS"}})
+   ```
 
-2. Find Multiple Document
+2. **Update Multiple Documents**  
+   Updates all matching documents.
+   ```js
+   db.<collectionName>.updateMany({skills: "ml"}, {$set: {status: "selected"}})
+   ```
 
-This operation is used to update a multiple document in collection.
+---
 
--> Syntax:- db.<collectionName>.updateMany({skills: "ml}, {$set: {status: "selected"}})
+## Delete Operations
 
-**Delete Operations**
+1. **Delete a Single Document**  
+   Deletes one matching document.
 
-1. Find Single a Document
+   ```js
+   db.<collectionName>.deleteOne({name: "joe"})
+   ```
 
-This operation is used to delete a particular specfic document in collection.
+2. **Delete Multiple Documents**  
+   Deletes all documents that match a condition.
+   ```js
+   db.<collectionName>.deleteMany({skills: "ml"})
+   ```
 
--> Syntax:- db.<collectionName>.deleteOne({name: "joe"})
+---
 
-2. Find Multiple Document
+# Miscellaneous Operations
 
-This operation is used to delete a multiple document with common value in collection.
+1. **Sort Documents**  
+   Sort results in ascending/descending order.
 
--> Syntax:- db.<collectionName>.delete({skills: "ml"})
+   ```js
+   db.<collectionName>.find().sort({age: 1})   // Increasing order
+   db.<collectionName>.find().sort({age: -1})  // Decreasing order
+   ```
 
-**NOTE:- Read and Find OP are some what same and same goes for Create and Update OP**
+2. **Limit Results**  
+   Restrict the number of returned documents.
+   ```js
+   db.<collectionName>.find().limit(1)
+   ```
 
-**Mis Operation**
+---
 
-1. Sort Operation
+# Aggregation Pipeline
 
-This operation is used to sort the document in collection.
+An **aggregation pipeline** processes documents through multiple stages (like filtering, grouping, sorting, reshaping, etc).
 
--> Syntax:- db.<collectionName>.find().sort({age:1}) (Increasing order)
+- Each stage performs an operation on the input documents
+- Output of one stage becomes input for the next stage
+- Can calculate totals, averages, min/max, counts, etc.
 
--> Syntax:- db.<collectionName>.find().sort({age:-1}) (Deacreasing order)
+### Example Collection
 
-2. Limit Operation
-
-This operation is used to limit access of the document in database.
-
--> syntax:- db.<collectionName>.find().limit(1)
-
-# Aggregation Pipeline.
-
--> An aggregation pipeline consists of one or more stages that process documents:
-
--> Each stage performs an operation on the input documents. For example, a stage can filter documents, group documents, and calculate values.
-
--> The documents that are output from a stage are passed to the next stage.
-
--> An aggregation pipeline can return results for groups of documents. For example, return the total, average, maximum, and minimum values.
-
-**Collection**
+```json
 { "name": "Joe", "skills": "ml", "qty": 5, "status": "selected" }
 { "name": "Anna", "skills": "ml", "qty": 8, "status": "pending" }
 { "name": "Bob", "skills": "nodeJS", "qty": 10, "status": "selected" }
 { "name": "Clara", "skills": "ml", "qty": 3, "status": "selected" }
+```
 
-**Syntax Aggregation Pipeline**
+### Example Aggregation Pipeline
 
+```js
 db.Cars.aggregate([
-{ $match: { status: "selected" } }, // Step 1: filter documents
-{ $group: {
-_id: "$skills", // Step 2: group by "skills"
-totalQty: { $sum: "$qty" }, // Step 2: sum the "qty" for each group
-count: { $sum: 1 } // Step 2: count documents in each group
-} },
-{ $sort: { totalQty: -1 } } // Step 3: sort by totalQty descending
+  { $match: { status: "selected" } }, // Step 1: filter documents
+  {
+    $group: {
+      _id: "$skills", // Step 2: group by "skills"
+      totalQty: { $sum: "$qty" }, // Step 2: sum the "qty" for each group
+      count: { $sum: 1 }, // Step 2: count documents in each group
+    },
+  },
+  { $sort: { totalQty: -1 } }, // Step 3: sort by totalQty descending
 ]);
+```
+
+---
+
+# NOTE
+
+- **Read and Find** are somewhat similar operations.
+- **Create and Update** also overlap conceptually since both modify documents.
