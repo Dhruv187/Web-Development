@@ -1,8 +1,44 @@
 const express = require("express");
 const app = express();
 const users = require("./MOCK_DATA.json");
+const mongoose = require("mongoose");
 let port = 3000;
 const fs = require("fs");
+
+mongoose
+  .connect("mongodb://127.0.0.1:27017/First-try")
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => ("mongo ERROR", err));
+
+//! Schema for mongoose
+
+const userSchema = new mongoose.Schema(
+  {
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    jobTitle: {
+      type: String,
+    },
+    gender: {
+      type: String,
+    },
+  },
+  { timestamps: true }
+);
+
+//! model for Schema
+
+const User = mongoose.model("user", userSchema);
 
 //! Middleware:- A function that runs before your route handler
 app.use(express.urlencoded({ extended: false }));
@@ -19,61 +55,57 @@ app.use((req, res, next) => {
   );
 });
 
-app.get("/user", (req, res) => {
+app.get("/user", async (req, res) => {
+  const allDbUsers = await User.find({});
   const html = `
     <ul>
-    ${users.map((users) => `<li>${users.first_name}</li>`).join("")}
+    ${allDbUsers.map((users) => `<li>${users.firstName}</li>`).join("")}
     </ul>
     `;
   res.send(html);
 });
 
-app.get("/api/user", (req, res) => {
-  //! HTTP headers are key-value pairs included in HTTP requests and responses, providing additional information about the communication between a client and a server
-
-  //! These are avaviable both at request and response side
-  //! Its a good partice to write X before writing key of custom header as it define it as a custom header
-  res.setHeader("X-Name", "CustomHeader");
-  res.json(users);
+app.get("/api/user", async (req, res) => {
+  const allDbUsers = await User.find({});
+  res.json(allDbUsers);
 });
 
 app
   .route("/api/user/:id")
-  .get((req, res) => {
-    //! id store the id that is needed obtain using params
-    const id = Number(req.params.id);
-    //! user store the user that is needed obtain using find fn
-    const user = users.find((user) => user.id === id);
+  .get(async (req, res) => {
+    const user = await User.findById(req.params.id);
     res.json(user);
   })
-  .patch((req, res) => {
-    const id = Number(req.params.id);
-    const user = users.find((user) => user.id === id);
-    Object.assign(user, req.body);
-    //! as there is no database so fs module is used to make changes in json file
-    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
-      res.json(user);
-    });
+  .patch(async (req, res) => {
+    await User.findByIdAndUpdate(req.params.id, { lastName: "happy" });
+    return res.json({ status: "success" });
   })
-  .delete((req, res) => {
-    const id = Number(req.params.id);
-    const user = users.filter((user) => user.id !== id);
-    //! push function is used to update the data of users
-    user.length = 0;
-    users.push(user);
-    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
-      res.json(user);
-    });
-    console.log("user deleted");
+  .delete(async (req, res) => {
+    await User.findByIdAndDelete(req.params.id);
+    return res.json({ status: "success" });
   });
 
-app.post("/api/user", (req, res) => {
-  const newUser = req.body;
-  newUser.id = users.length + 1;
-  users.push(newUser);
-  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
-    res.status("201").json(newUser);
+app.post("/api/user", async (req, res) => {
+  const body = req.body;
+  if (
+    !body ||
+    !body.first_name ||
+    !body.last_name ||
+    !body.email ||
+    !body.job_title ||
+    !body.gender
+  ) {
+    return res.status(400).json({ msg: "All fields are req.." });
+  }
+  const result = await User.create({
+    firstName: body.first_name,
+    lastName: body.last_name,
+    email: body.email,
+    gender: body.gender,
+    jobTitle: body.job_title,
   });
+  console.log("result", result);
+  return res.status(201).json({ msg: "success" });
 });
 
 app.listen(port, () => {
